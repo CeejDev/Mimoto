@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 
+import { DatabaseProvider } from '@/context/DatabaseContext';
 import { Theme } from '@/constants/Theme';
 
 export {
@@ -52,11 +53,13 @@ export default function RootLayout() {
   return (
     <>
       <StatusBar style="light" />
-      <ThemeProvider value={MimotoDarkTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        </Stack>
-      </ThemeProvider>
+      <DatabaseProvider>
+        <ThemeProvider value={MimotoDarkTheme}>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          </Stack>
+        </ThemeProvider>
+      </DatabaseProvider>
     </>
   );
 }

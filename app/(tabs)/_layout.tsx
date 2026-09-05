@@ -48,16 +48,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="glovebox"
-        options={{
-          title: 'Glovebox',
-          tabBarLabel: 'Glovebox',
-          tabBarIcon: ({ color, size }: { color: ColorValue; size: number }) => (
-            <Ionicons name="folder-open-outline" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
         name="records"
         options={{
           title: 'Records',
